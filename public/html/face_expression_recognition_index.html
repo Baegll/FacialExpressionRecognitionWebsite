@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<!-- Load essential CSS & JS from CDN -->
+<head>
+  <script src="https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/dist/face-api.min.js"></script>
+  <script src="js/detecter.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+</head>
+<!-- Main Body -->
+<body>
+<!-- Create a window for displaying result -->
+  <div class="center-content page-container">
+    <div class="progress" id="loader">
+      <div class="indeterminate"></div>
+    </div>
+    <div style="position: relative" class="margin">
+      <img id="inputImg" src="" style="max-width: 800px;" />
+      <canvas id="overlay" />
+    </div>
+    <!-- Create a window for displaying image -->
+    <div class="row side-by-side">
+      <!-- interface for image detection -->
+      <input id="queryImgUploadInput" type="file" class="waves-effect btn bold" onchange="AnaImage()" accept=".jpg, .jpeg, .png">
+      <!-- interface for real-time detection -->
+      <a class="waves-effect waves-light btn" href="/realtime_face_expression_recognition" target="_blank">Real-time Detection</a>
+    </div>
+  </div>
+</body>
+<!-- Additional scripts for detector control -->
+  <script>
+    // Main
+    async function run() {
+      // Read the arguments for loading detectors
+      await loadDetector()
+      // load the weights of 68 face landmark model from CDN
+      await faceapi.loadFaceLandmarkModel('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/weights/')
+      // load the weights of Tiny_detector from CDN
+      await faceapi.loadFaceExpressionModel('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/weights/')
+      // Start with the sample image
+      const img = await faceapi.fetchImage('/img/sample1.jpg')
+      // Get the input
+      $(`#inputImg`).get(0).src = img.src
+      // Output the result
+      await updateResults()
+    }
+    // Start
+    $(document).ready(function() {
+      run()
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "whoami",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
