@@ -10,7 +10,7 @@ const viewsDir = path.join(__dirname, './public/html')
 app.use(express.static(viewsDir))
 
 // Redirect the Pages
-app.get('/', (req, res) => res.redirect('/face_expression_recognition'))
+app.get('/', (req, res) => res.sendFile(path.join(viewsDir, 'index.html')))
 app.get('/realtime_face_expression_recognition', (req, res) => res.sendFile(path.join(viewsDir, 'realtime_face_expression_recognition.html')))
 app.get('/face_expression_recognition', (req, res) => res.sendFile(path.join(viewsDir, 'face_expression_recognition_index.html')))
 

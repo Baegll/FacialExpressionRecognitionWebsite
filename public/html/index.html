@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DeepEmo - Face Expression Recognition</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/ui_core.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar dark">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo"><img class="logo" src="img/logo.png" alt=""></i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/manual">Manual</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+
+        <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons black-text">menu</i></a>
+      </div>
+    </nav>
+    <!-- Navbar LEFT -->
+    <ul id="slide-out" class="side-nav">
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal active">Pages</a>
+          </li>
+        </ul>
+      </li>
+      <li><a class="waves-effect waves-teal" href="blog.html">Blog</a></li>
+      <li><a class="waves-effect waves-teal" href="docs/about.html">Docs</a></li>
+    </ul>
+    <!-- Page 1 -->
+    <div class="circle-reveal-intro full-height">
+      <div class="fixed-wrapper">
+      <div class="circle-reveal-wrapper header light" style="pointer-events:none">
+          <div class="circle-background white"></div>
+          <div class="header-wrapper row valign-wrapper">
+            <div class="col s12 m8 offset-m2">
+              <h2>What's your girlfriend's emotion?</h2>
+              <span class="tagline"><b>A Facial Expression Recognition Webapp Powered by face-api.js</b><br>Slide to start</span>
+              <!-- Loader -->
+              <div class="progress" id="loader">
+                <div class="indeterminate"></div>
+              </div>
+              <button class="nextp" style="pointer-events:auto "><i class="icon-caret-down"></i></button>
+            </div>
+        </div>
+      </div>
+
+
+
+    <!-- Page 2 -->
+        <div class="circle-reveal-wrapper header">
+          <div class="circle-background pink"></div>
+          <div class="header-wrapper row valign-wrapper">
+            <div class="col s12 m8 offset-m2">
+              <!-- Create a window for displaying result -->
+              <div style="position: relative" class="margin">
+                <img id="inputImg" src="" style="max-width: 100%;" />
+                <canvas id="overlay" />
+              </div>
+              <!-- Create a window for displaying image -->
+              <div class="row side-by-side">
+                <!-- interface for image detection -->
+                <input id="queryImgUploadInput" type="file" style="pointer-events:auto" class="waves-effect btn bold" onchange="AnaImage()" accept=".jpg, .jpeg, .png">
+              </div>
+              <span class="tagline">Next.</span>
+              <button class="nextp" style="pointer-events:auto"><i class="icon-caret-down"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Page 3 -->
+      <div class="section background-layer valign-wrapper">
+        <div class="container">
+          <h1>Realtime Detection</h1>
+          <div class="row masonry-grid">
+            <div class="col s12 m6 l4">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2"></a>
+                  <span class="card-title">Lauch with<br><b>Performance Profile</b><br> - Optimize for Mobile<br> - Best Fps </span>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l4">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2"></a>
+                  <span class="card-title">Lauch with<br><b>Balance Profile</b><br> - Optimize for Mac / PC<br> - Balanced Fps & Acc</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l4">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2"></a>
+                  <span class="card-title">Lauch with<br><b>Greek Profile</b><br> - Optimize for HPC <br>- Best Accuracy </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+   <!-- Bottom -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s6 m3">
+            <img class="materialize-logo" src="img/materialize-teal.png" alt="">
+            <p>Made with Materialize.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large red">
+        <i class="large material-icons">arrow_upward</i>
+      </a>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/dist/face-api.min.js"></script>
+
+
+    <!-- Initialization script -->
+    <script src="js/ui_core.js"></script>
+    <script src="js/detecter.js"></script>
+    <script>
+      // Main
+      async function run() {
+        // Read the arguments for loading detectors
+        await loadDetector()
+        // load the weights of 68 face landmark model from CDN
+        await faceapi.loadFaceLandmarkModel('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/weights/')
+        // load the weights of Tiny_detector from CDN
+        await faceapi.loadFaceExpressionModel('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/weights/')
+        // Start with the sample image
+        const img = await faceapi.fetchImage('/img/sample1.jpg')
+        // Get the input
+        $(`#inputImg`).get(0).src = img.src
+        // Output the result
+        await updateResults()
+      }
+      // Start
+      $(document).ready(function() {
+        run()
+      })
+    </script>
+  </body>
+</html>
