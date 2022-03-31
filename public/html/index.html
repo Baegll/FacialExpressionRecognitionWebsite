@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-
+  <div id="start"></div>
     <!-- Navbar -->
     <nav class="navbar dark">
       <div class="nav-wrapper">
@@ -27,18 +27,7 @@
         <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons black-text">menu</i></a>
       </div>
     </nav>
-    <!-- Navbar LEFT -->
-    <ul id="slide-out" class="side-nav">
-      <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li class="bold">
-            <a class="collapsible-header waves-effect waves-teal active">Pages</a>
-          </li>
-        </ul>
-      </li>
-      <li><a class="waves-effect waves-teal" href="blog.html">Blog</a></li>
-      <li><a class="waves-effect waves-teal" href="docs/about.html">Docs</a></li>
-    </ul>
+
     <!-- Page 1 -->
     <div class="circle-reveal-intro full-height">
       <div class="fixed-wrapper">
@@ -52,7 +41,7 @@
               <div class="progress" id="loader">
                 <div class="indeterminate"></div>
               </div>
-              <button class="nextp" style="pointer-events:auto "><i class="icon-caret-down"></i></button>
+              <button class="nextp" style="pointer-events:auto"><i class="icon-caret-down"></i></button>
             </div>
         </div>
       </div>
@@ -62,17 +51,17 @@
     <!-- Page 2 -->
         <div class="circle-reveal-wrapper header">
           <div class="circle-background pink"></div>
-          <div class="header-wrapper row valign-wrapper">
+          <div class="header-wrapper row valign-wrapper" style="pointer-events:none">
             <div class="col s12 m8 offset-m2">
               <!-- Create a window for displaying result -->
-              <div style="position: relative" class="margin">
-                <img id="inputImg" src="" style="max-width: 100%;" />
+              <div style="position: relative;pointer-events:none" class="margin">
+                <img id="inputImg" src="" style="max-width: 100%;pointer-events:none" />
                 <canvas id="overlay" />
               </div>
               <!-- Create a window for displaying image -->
               <div class="row side-by-side">
                 <!-- interface for image detection -->
-                <input id="queryImgUploadInput" type="file" style="pointer-events:auto" class="waves-effect btn bold" onchange="AnaImage()" accept=".jpg, .jpeg, .png">
+                <input id="queryImgUploadInput" type="file" class="waves-effect btn bold" onchange="AnaImage()" accept=".jpg, .jpeg, .png">
               </div>
               <span class="tagline">Next.</span>
               <button class="nextp" style="pointer-events:auto"><i class="icon-caret-down"></i></button>
@@ -89,25 +78,26 @@
           <div class="row masonry-grid">
             <div class="col s12 m6 l4">
               <div class="card">
-                <div class="card-image">
-                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2"></a>
-                  <span class="card-title">Lauch with<br><b>Performance Profile</b><br> - Optimize for Mobile<br> - Best Fps </span>
+                <div class="card-image" style="pointer-events:auto;z-index: 990">
+                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
+                  <span class="card-title" style="pointer-events:auto;z-index: 990">Lauch with<br><b>Performance Profile</b><br>for Mobile or Raspberry pi<br> - Best Fps </span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+              <div class="card">
+                <div class="card-image" style="pointer-events:auto;z-index: 990">
+                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
+                  <span class="card-title" style="pointer-events:auto;z-index: 990">Lauch with<br><b>Balance Profile</b><br>for Mac / PC<br> - Balanced Fps & Acc</span></a>
                 </div>
               </div>
             </div>
             <div class="col s12 m6 l4">
               <div class="card">
-                <div class="card-image">
-                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2"></a>
-                  <span class="card-title">Lauch with<br><b>Balance Profile</b><br> - Optimize for Mac / PC<br> - Balanced Fps & Acc</span>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m6 l4">
-              <div class="card">
-                <div class="card-image">
-                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2"></a>
-                  <span class="card-title">Lauch with<br><b>Greek Profile</b><br> - Optimize for HPC <br>- Best Accuracy </span>
+                <div class="card-image" style="pointer-events:auto;z-index: 990">
+                  <a href="/realtime_face_expression_recognition"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
+                  <span class="card-title" style="pointer-events:auto;z-index: 990">Lauch with<br><b>Greek Profile</b><br>for High-end Devices <br>- Best Accuracy </span></a>
                 </div>
               </div>
             </div>
@@ -132,7 +122,7 @@
 
     <!-- Floating Action Button -->
     <div class="fixed-action-btn">
-      <a class="btn-floating btn-large red">
+      <a class="btn-floating btn-large red" href="#start" style="position:fixed;right:0;bottom:0">
         <i class="large material-icons">arrow_upward</i>
       </a>
     </div>
