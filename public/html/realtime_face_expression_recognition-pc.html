@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Realtime Face Expression Recognition</title>
+    <meta name="description" content="Realtime Face Expression Recognition Webcam">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Load essential CSS & JS from CDN -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/ui_core.css">
+</head>
+<!-- Main Body -->
+<body>
+<!-- Navbar -->
+<nav class="navbar dark">
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo"><img class="logo" src="img/logo.png" alt=""></i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/manual">Manual</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="title-transition section white valign-wrapper">
+    <div class="row valign">
+        <div class="col s8 offset-s2 m6 offset-m3 blog-body">
+            <div class="center-content">
+                <div class="progress" id="loader">
+                    <div class="indeterminate"></div>
+                </div>
+                <div style="position: relative" class="margin">
+                    <video onloadedmetadata="real_time_d(this)" id="inputVideo" autoplay muted playsinline></video>
+                    <canvas id="overlay" />
+                </div>
+
+                <!-- Statistics Data Area-->
+                <div class="row side-by-side">
+                    <div id="fps_meter" class="row side-by-side">
+                        <div>
+                            <label>Input Size: 320 | Loaded Weights: Tiny Face Detector<br><br></label>
+                            <label for="delay">Response Time:</label>
+                            <input disabled value="-" id="delay" type="text" class="bold">
+                            <label for="fr">Frame Rate:</label>
+                            <input disabled value="-" id="fr" type="text" class="bold">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col s6 m3">
+                <img class="materialize-logo" src="img/materialize-teal.png" alt="">
+                <p>Made with Materialize<br> & face-api.js</p>
+            </div>
+            <div class="col s6 m3">
+                <h5>Project Page</h5>
+                <ul>
+                    <li><a href="https://github.com/Baegll/FacialExpressionRecognitionWebsite">Github</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://choosealicense.com/licenses/mit/">License</a></li>
+                </ul>
+            </div>
+            <div class="col s6 m3">
+                <h5>Sitemap</h5>
+                <ul>
+                    <li><a href="/manual">manual</a></li>
+                    <li><a href="/privacy">privacy</a></li>
+                    <li><a href="/about">about</a></li>
+                    <li><a href="/sitemap.xml">sitemap.xml</a></li>
+                </ul>
+            </div>
+            <div class="col s6 m3">
+                <h5>Contact</h5>
+                <ul>
+                    <li><a href="mailto:w@wangshengze.com">w@wangshengze.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/dist/face-api.min.js"></script>
+<script src="js/p2.js"></script>
+
+<!-- Initialization script -->
+<script>
+    // Main
+    async function run() {
+        // Read the arguments for loading detectors
+        await loadDetector()
+        // load the weights of Tiny_detector from CDN
+        await faceapi.loadFaceExpressionModel('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/weights/')
+        // Access the webcam
+        const webcam = await navigator.mediaDevices.getUserMedia({ video: {} })
+        // Update the Input
+        $('#inputVideo').get(0).srcObject = webcam
+    }
+    // Start
+    $(document).ready(function() {
+        run()
+    })
+</script>
+
+</body>
+</html>

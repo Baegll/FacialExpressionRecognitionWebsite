@@ -1,6 +1,6 @@
 // Parameters
 let input_size_image = 608
-let input_size_video = 160
+let input_size_video = 320
 let scoreThreshold = 0.5
 let minConfidence = 0.05
 
@@ -30,12 +30,6 @@ async function AnaImage() {
     $('#inputImg').get(0).src = img.src
     await updateResults()
 }
-async function Anaage() {
-    const imgFile = $('#queryImgUploadInput').get(0).files[0]
-    const img = await faceapi.bufferToImage(imgFile)
-    $('#inputImg').get(0).src = img.src
-    await updateage()
-}
 // Update the detection result
 async function updateResults() {
     // Input
@@ -51,29 +45,6 @@ async function updateResults() {
     const resizedResults = faceapi.resizeResults(results, inputImgEl)
     faceapi.draw.drawDetections(canvas, resizedResults)
     faceapi.draw.drawFaceExpressions(canvas, resizedResults, minConfidence)
-}
-
-async function updateage() {
-    const inputImgEl = $('#inputImg').get(0)
-    const results = await faceapi.detectAllFaces(inputImgEl, setParameters_image())
-        // compute face landmarks to align faces for better accuracy
-        .withFaceLandmarks()
-        .withAgeAndGender()
-    const canvas = $('#overlay').get(0)
-    faceapi.matchDimensions(canvas, inputImgEl)
-    const resizedResults = faceapi.resizeResults(results, inputImgEl)
-    faceapi.draw.drawDetections(canvas, resizedResults)
-
-    resizedResults.forEach(result => {
-        const {age, gender, genderProbability} = result
-        new faceapi.draw.DrawTextField(
-            [
-                `${faceapi.utils.round(age, 0)} years`,
-                `${gender} (${faceapi.utils.round(genderProbability)})`
-            ],
-            result.detection.box.bottomLeft
-        ).draw(canvas)
-    })
 }
 
 // Real-time Recognition

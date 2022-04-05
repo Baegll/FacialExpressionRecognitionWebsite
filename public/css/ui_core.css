@@ -11527,7 +11527,7 @@ nav.navbar ul.dropdown-content li > span:hover::before,
 
 /**** NAVBAR ****/
 nav.navbar {
-  z-index: 10;
+  z-index: 999;
   position: fixed;
   box-shadow: none;
   background-color: transparent;
@@ -11563,7 +11563,7 @@ nav.navbar.solid {
 }
 
 nav.navbar.solid.dark, nav.navbar.solid {
-  background-color: #10a98d;
+  background-color: #000000
 }
 
 nav.navbar.solid.dark :not(.dropdown-content) > li > a, nav.navbar.solid :not(.dropdown-content) > li > a {
@@ -11580,7 +11580,7 @@ nav.navbar.solid.dark a::before, nav.navbar.solid a::before {
 
 nav.navbar.solid.dark ul.dropdown-content li > a::before, nav.navbar.solid ul.dropdown-content li > a::before,
 nav.navbar.solid.dark ul.dropdown-content li > span::before, nav.navbar.solid ul.dropdown-content li > span::before {
-  background-color: #10a98d;
+  background-color: #000000;
 }
 
 nav.navbar .brand-logo {

@@ -57,6 +57,8 @@
             }
           };
 
+
+
           // Only initialize if past responsive threshold
           /**************
            * CIRCLE REVEAL *
@@ -148,3 +150,15 @@
 
      // Init Scroll Transitions
     $('.circle-reveal-intro').scrollTransition();
+
+     // Navbar scroll transitions
+     $(window).on('scroll.navbar', function () {
+       var navbar = $('nav.navbar').first();
+       if (navbar.hasClass('navbar-solid-transition')) {
+         if ($(window).scrollTop() > 0) {
+           navbar.addClass('solid');
+         } else {
+           navbar.removeClass('solid');
+         }
+       }
+     });

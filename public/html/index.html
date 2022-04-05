@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>DeepEmo - Face Expression Recognition</title>
-    <meta name="description" content="">
+    <meta name="description" content="A facial expression recognition WebApp">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/ui_core.css">
@@ -23,8 +23,6 @@
           <li><a href="/privacy">Privacy</a></li>
           <li><a href="/about">About</a></li>
         </ul>
-
-        <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons black-text">menu</i></a>
       </div>
     </nav>
 
@@ -36,7 +34,7 @@
           <div class="header-wrapper row valign-wrapper">
             <div class="col s12 m8 offset-m2">
               <h2>What's your girlfriend's emotion?</h2>
-              <span class="tagline"><b>A Facial Expression Recognition Webapp Powered by face-api.js</b><br>Slide to start</span>
+              <span class="tagline"><b>DeepEmO - A Facial Expression Recognition Webapp Powered by face-api.js</b><br>Slide to start</span>
               <!-- Loader -->
               <div class="progress" id="loader">
                 <div class="indeterminate"></div>
@@ -74,12 +72,13 @@
     <!-- Page 3 -->
       <div class="section background-layer valign-wrapper">
         <div class="container">
-          <h1>Realtime Detection</h1>
+
+          <h2>Realtime Face Expression Recognition</h2>
           <div class="row masonry-grid">
             <div class="col s12 m6 l4">
               <div class="card">
                 <div class="card-image" style="pointer-events:auto;z-index: 990">
-                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
+                  <a href="/realtime_face_expression_recognition-mobile" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
                   <span class="card-title" style="pointer-events:auto;z-index: 990">Lauch with<br><b>Performance Profile</b><br>for Mobile or Raspberry pi<br> - Best Fps </span></a>
                 </div>
               </div>
@@ -88,7 +87,7 @@
             <div class="col s12 m6 l4">
               <div class="card">
                 <div class="card-image" style="pointer-events:auto;z-index: 990">
-                  <a href="/realtime_face_expression_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
+                  <a href="/realtime_face_expression_recognition-pc" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
                   <span class="card-title" style="pointer-events:auto;z-index: 990">Lauch with<br><b>Balance Profile</b><br>for Mac / PC<br> - Balanced Fps & Acc</span></a>
                 </div>
               </div>
@@ -96,29 +95,65 @@
             <div class="col s12 m6 l4">
               <div class="card">
                 <div class="card-image" style="pointer-events:auto;z-index: 990">
-                  <a href="/realtime_face_expression_recognition"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
+                  <a href="/realtime_face_expression_recognition-hpc"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
                   <span class="card-title" style="pointer-events:auto;z-index: 990">Lauch with<br><b>Greek Profile</b><br>for High-end Devices <br>- Best Accuracy </span></a>
                 </div>
               </div>
             </div>
           </div>
+
+          <h2>Age and Gender Recognition</h2>
+          <div class="row masonry-grid">
+            <div class="col s12 m6 l4">
+              <div class="card">
+                <div class="card-image" style="pointer-events:auto;z-index: 990">
+                  <a href="/age_and_gender_recognition" style="pointer-events:auto"><img src="https://dummyimage.com/600x400/6d88f2/6d88f2">
+                    <span class="card-title" style="pointer-events:auto;z-index: 990">Lauch<br><b>Age and Gender Recognition</b><br>- AgeGenderNet</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
 
 
-   <!-- Bottom -->
-    <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col s6 m3">
-            <img class="materialize-logo" src="img/materialize-teal.png" alt="">
-            <p>Made with Materialize.</p>
+      <!-- Footer -->
+      <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col s6 m3">
+              <img class="materialize-logo" src="img/materialize-teal.png" alt="">
+              <p>Made with Materialize<br> & face-api.js</p>
+            </div>
+            <div class="col s6 m3">
+              <h5>Project Page</h5>
+              <ul>
+                <li><a href="https://github.com/Baegll/FacialExpressionRecognitionWebsite">Github</a></li>
+              </ul>
+              <ul>
+                <li><a href="https://choosealicense.com/licenses/mit/">License</a></li>
+              </ul>
+            </div>
+            <div class="col s6 m3">
+              <h5>Sitemap</h5>
+              <ul>
+                <li><a href="/manual">manual</a></li>
+                <li><a href="/privacy">privacy</a></li>
+                <li><a href="/about">about</a></li>
+                <li><a href="/sitemap.xml">sitemap.xml</a></li>
+              </ul>
+            </div>
+            <div class="col s6 m3">
+              <h5>Contact</h5>
+              <ul>
+                <li><a href="mailto:w@wangshengze.com">w@wangshengze.com</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
-
-    </div>
+      </footer>
 
     <!-- Floating Action Button -->
     <div class="fixed-action-btn">
