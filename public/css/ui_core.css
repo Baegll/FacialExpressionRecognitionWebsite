@@ -10197,6 +10197,11 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   line-height: 2.4rem;
 }
 
+.blog-body h5 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
 .blog-body p {
   font-size: 1.1rem;
   color: #666;
