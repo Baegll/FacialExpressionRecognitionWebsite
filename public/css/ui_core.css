@@ -10204,6 +10204,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   margin: 20px 0;
 }
 
+.blog-body p2 {
+  font-size: 1.1rem;
+  color: #C1C1C1;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
 .blog-body img {
   width: 100%;
 }
